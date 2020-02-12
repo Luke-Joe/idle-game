@@ -5,11 +5,12 @@ import java.util.List;
 
 public class Player {
 
-    private List<Item> inv;
+    public static List<Item> inv;
     public static int balance;
     public static int ad;
     public static final int MAX_SIZE = 6;
     public static int dmg;
+    public static int cs;
 
 
     public Player() {
@@ -17,6 +18,7 @@ public class Player {
         balance = 1000;
         ad = 10;
         dmg = 0;
+        cs = 0;
     }
 
     //MODIFIES: this
