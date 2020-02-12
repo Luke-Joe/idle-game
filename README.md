@@ -15,6 +15,7 @@ I have also put my own spin on the genre by correlating it to minions, which I h
 ##User Stories
 - As a user, I want to be able to add an item to my arsenal
 - As a user, I want to be able to remove an item from my arsenal
+- As a user, I want to be able to view my balance
 - As a user, I want to be able to view a list of items that can be bought
 - As a user, I want to be able to click on a minion to hit them
 - As a user, I want to be able to purchase units to hit minions for me
