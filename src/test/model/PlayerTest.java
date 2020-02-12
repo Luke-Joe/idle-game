@@ -31,6 +31,8 @@ class PlayerTest {
         assertFalse(player.buyItem(new Item(10000, 5, "eerie warning", true)));
         assertEquals(985, player.getBalance());
         assertEquals(25, player.getAd());
+        assertEquals(0, player.getDmg());
+        assertEquals(0, player.getCs());
 
 
 
@@ -49,6 +51,8 @@ class PlayerTest {
         assertEquals(15, player.getAd());
         assertFalse(player.buyItem((new Item (6300, 5, "Lucas", false))));
         assertTrue(player.buyItem((new Item (1, 100, "Lucas", false))));
+        assertEquals(100, player.getDmg());
+        assertEquals(0, player.getCs());
 
 
 
@@ -66,6 +70,8 @@ class PlayerTest {
         assertTrue(player.sellItem(item1));
         assertFalse(player.buyItem((new Item (6300, 5, "Lucas", false))));
         assertTrue(player.buyItem((new Item (1, 100, "Lucas", false))));
+        assertEquals(100, player.getDmg());
+        assertEquals(0, player.getCs());
     }
 
 

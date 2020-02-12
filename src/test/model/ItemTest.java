@@ -20,5 +20,6 @@ class ItemTest {
         assertEquals("Sin of Envy", item.getName());
         assertTrue(item.getType());
 
+
     }
 }

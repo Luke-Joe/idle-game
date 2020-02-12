@@ -40,9 +40,9 @@ public class Game {
                 shop();
 
             } else if (move.equals("r")) {
-                System.out.println("your balance has increased by " + ((player.cs / 10) * 10) + "!");
-                player.balance = player.balance + ((player.cs / 10) * 10);
-                player.cs = player.cs + 1;
+                System.out.println("your balance has increased by " + ((player.getCs() / 10) * 10) + "!");
+                player.balance = player.getBalance() + ((player.getCs() / 10) * 10);
+                player.cs = player.getCs() + 1;
 
             } else {
                 System.out.println("your command is invalid");
@@ -52,9 +52,10 @@ public class Game {
 
 
     private void profile() {
-        System.out.println("Your current balance is " + player.balance + ".\n You are doing "
-                + player.ad + " damage with each strike.\n Your team is doing " + player.dmg + " each second.\n"
-                + "you have slain " + player.cs + " minions.");
+        System.out.println("Your current balance is " + player.getBalance() + ".\n You are doing "
+                + player.getAd() + " damage with each strike.\n Your team is doing " + player.getDmg()
+                + " each second.\n"
+                + "you have slain " + player.getCs() + " minions.");
 //                + "You have used up slots in your inventory \n");
 
     }

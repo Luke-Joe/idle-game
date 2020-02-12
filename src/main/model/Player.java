@@ -75,4 +75,12 @@ public class Player {
         return inv.size();
     }
 
+    public int getCs() {
+        return cs;
+    }
+
+    public int getDmg() {
+        return dmg;
+    }
+
 }
