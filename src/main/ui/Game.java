@@ -3,11 +3,9 @@ package ui;
 import model.Item;
 import model.Player;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-import static model.Player.MAX_SIZE;
-
+// The console user interface for LucasFarmingSimulator
 public class Game {
     private Scanner input;
     Player player = new Player();
@@ -40,8 +38,8 @@ public class Game {
                 shop();
 
             } else if (move.equals("r")) {
-                System.out.println("your balance has increased by " + ((player.getCs() / 10) * 10) + "!");
-                player.balance = player.getBalance() + ((player.getCs() / 10) * 10);
+                System.out.println("your balance has increased by " + ((player.getCs() / 10) + 10) + "!");
+                player.balance = player.getBalance() + ((player.getCs() / 10) + 10);
                 player.cs = player.getCs() + 1;
 
             } else {

@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+// The Shop,
 public class Player {
 
     public static List<Item> inv;
