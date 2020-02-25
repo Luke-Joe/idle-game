@@ -3,16 +3,15 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-// The Shop,
+// The player and their stats
 public class Player {
+    private  List<Item> inv;
+    private int balance;
+    private  int ad;
+    private  int dmg;
+    private int cs;
 
-    public static List<Item> inv;
-    public static int balance;
-    public static int ad;
     public static final int MAX_SIZE = 6;
-    public static int dmg;
-    public static int cs;
-
 
     public Player() {
         inv = new ArrayList<>();
@@ -63,7 +62,7 @@ public class Player {
     }
 
     //EFFECTS: returns the users balance
-    public int getBalance() {
+    public  int getBalance() {
         return balance;
     }
 
@@ -83,5 +82,27 @@ public class Player {
     public int getDmg() {
         return dmg;
     }
+
+    public List<Item> getInv() {
+        return inv;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public void setCs(int cs) {
+        this.cs = cs;
+    }
+
+    public void setAd(int ad) {
+        this.ad = ad;
+    }
+
+    public void setDmg(int dmg) {
+        this.dmg = dmg;
+    }
+
+
 
 }

@@ -2,25 +2,41 @@ package ui;
 
 import model.Item;
 import model.Player;
+import model.SinOfEnvy;
+import org.json.simple.parser.ParseException;
+import persistence.Reader;
+import persistence.Writer;
 
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import static persistence.Reader.readPlayer;
 
 // The console user interface for LucasFarmingSimulator
 public class Game {
     private Scanner input;
     Player player = new Player();
-    Item item1 = new Item(300, 5, "The Sin of Envy", true);
+    Item item1 = new SinOfEnvy();
     Item item3 = new Item(0, 1, "Chicken", false);
 
     //EFFECTS: runs the game
-    public Game() {
-        runGame();
+    public Game() throws ParseException {
+        try {
+            player = Reader.parseSave(readPlayer("./data/save.json"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        runGame((player));
     }
 
 
     //MODIFIES: this
     //EFFECTS: processes user input
-    private void runGame() {
+    private void runGame(Player player) {
         boolean running = true;
         String move;
         input = new Scanner(System.in);
@@ -30,30 +46,34 @@ public class Game {
             move = input.next();
 
             if (move.equals("e")) {
+                try {
+                    Writer.savePlayer(player);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 running = false;
-                System.out.println("See you next time");
             } else if (move.equals("p")) {
                 profile();
             } else if (move.equals("s")) {
                 shop();
-
             } else if (move.equals("r")) {
-                System.out.println("your balance has increased by " + ((player.getCs() / 10) + 10) + "!");
-                player.balance = player.getBalance() + ((player.getCs() / 10) + 10);
-                player.cs = player.getCs() + 1;
-
+                click();
             } else {
                 System.out.println("your command is invalid");
             }
         }
     }
 
+    private void click() {
+        System.out.println("your balance has increased by " + ((player.getCs() / 10) + 10) + "!");
+        player.setBalance(player.getBalance() + ((player.getCs() / 10) + 10));
+        player.setCs(player.getCs() + 1);
+    }
 
     private void profile() {
         System.out.println("Your current balance is " + player.getBalance() + ".\n You are doing "
                 + player.getAd() + " damage with each strike.\n Your team is doing " + player.getDmg()
-                + " each second.\n"
-                + "you have slain " + player.getCs() + " minions.");
+                + " each second.\n You have slain " + player.getCs() + " minions.");
 //                + "You have used up slots in your inventory \n");
 
     }

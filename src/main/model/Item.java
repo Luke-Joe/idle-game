@@ -1,5 +1,7 @@
 package model;
 
+// items that can be bought
+
 public class Item {
     private int cost;
     private int stats;

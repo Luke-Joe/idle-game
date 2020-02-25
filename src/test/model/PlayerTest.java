@@ -3,6 +3,9 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 import static model.Player.MAX_SIZE;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,6 +16,7 @@ class PlayerTest {
 
     public void setup(){
         player = new Player();
+
 
     }
 
@@ -33,6 +37,17 @@ class PlayerTest {
         assertEquals(25, player.getAd());
         assertEquals(0, player.getDmg());
         assertEquals(0, player.getCs());
+        assertEquals(6, player.getInv().size());
+        player.setBalance(123123);
+        assertEquals(123123, player.getBalance());
+        player.setCs(123);
+        assertEquals(123 , player.getCs());
+        player.setAd(45);
+        assertEquals(45, player.getAd());
+        player.setDmg(23);
+        assertEquals(23, player.getDmg());
+
+
 
 
 
