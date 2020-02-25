@@ -41,9 +41,7 @@ public class ReaderTest {
             assertEquals(43, player.getAd());
             assertEquals(1, player.getInv().size());
 
-        } catch (IOException e) {
-            fail("should not have run");
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             fail("should not have run");
         }
     }
@@ -52,10 +50,8 @@ public class ReaderTest {
     void testIOException() {
         try {
             parseSave(readPlayer("./data/save123123123.json"));
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
            // expected
-        } catch (ParseException e) {
-            fail("should not have run");
         }
     }
 }
