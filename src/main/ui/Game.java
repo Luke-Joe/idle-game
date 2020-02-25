@@ -2,14 +2,11 @@ package ui;
 
 import model.Item;
 import model.Player;
-import model.SinOfEnvy;
 import org.json.simple.parser.ParseException;
 import persistence.Reader;
 import persistence.Writer;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import static persistence.Reader.readPlayer;
@@ -18,7 +15,7 @@ import static persistence.Reader.readPlayer;
 public class Game {
     private Scanner input;
     Player player = new Player();
-    Item item1 = new SinOfEnvy();
+    Item item1 = new Item(300, 5, "The Sin of Envy", true);
     Item item3 = new Item(0, 1, "Chicken", false);
 
     //EFFECTS: runs the game

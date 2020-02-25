@@ -47,10 +47,10 @@ public class ReaderTest {
     }
 
     @Test
-    void testIOException() {
+    void testIOException() throws ParseException {
         try {
             parseSave(readPlayer("./data/save123123123.json"));
-        } catch (IOException | ParseException e) {
+        } catch (IOException e) {
            // expected
         }
     }
