@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 
 public class Writer {
 
-    public static void savePlayer(Player player) throws IOException {
+    public static void savePlayer(Player player, String input) throws IOException {
         JSONObject save = new JSONObject();
         save.put("balance", player.getBalance());
         save.put("cs", player.getCs());

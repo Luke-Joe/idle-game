@@ -21,7 +21,7 @@ public class Game {
     //EFFECTS: runs the game
     public Game() throws ParseException {
         try {
-            player = Reader.parseSave(readPlayer("./data/save.json"));
+            player = Reader.parseSave(readPlayer("./data/testUI.json"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -44,7 +44,7 @@ public class Game {
 
             if (move.equals("e")) {
                 try {
-                    Writer.savePlayer(player);
+                    Writer.savePlayer(player, "testUI");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

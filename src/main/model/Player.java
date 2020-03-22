@@ -61,6 +61,22 @@ public class Player {
 
     }
 
+    public void onKill() {
+        balance = balance + ((cs / 10) + ad);
+        cs = cs + 1;
+    }
+
+    public String displayItems() {
+        String listItem;
+        listItem = "Inventory: \n";
+
+        for (Item i : inv) {
+            listItem += "   - " + i.getName() + " [" + i.getStats() + "]\n";
+        }
+
+        return listItem;
+    }
+
     //EFFECTS: returns the users balance
     public  int getBalance() {
         return balance;

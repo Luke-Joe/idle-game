@@ -28,7 +28,7 @@ public class ReaderTest {
         player.setCs(3);
         player.setAd(43);
         player.getInv().add(item1);
-        savePlayer(player);
+        savePlayer(player, "save");
     }
 
     @Test

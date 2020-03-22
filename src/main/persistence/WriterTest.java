@@ -33,7 +33,7 @@ public class WriterTest {
     @Test
     void testWriteSave() throws IOException {
         //Save player data to file
-        savePlayer(player);
+        savePlayer(player, "save");
 
         //Read back player data from file
         try {
