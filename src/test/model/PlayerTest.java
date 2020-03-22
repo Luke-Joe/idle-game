@@ -89,6 +89,29 @@ class PlayerTest {
         assertEquals(0, player.getCs());
     }
 
+    @Test
+    void testOnKill(){
+        player.onKill();
+        assertEquals(1, player.getCs());
+        assertEquals(1010, player.getBalance());
+    }
+
+    @Test
+    void testDisplayItems(){
+        Item item1 = new Item(500, 50, "Dusk blade", true);
+        Item item2 = new Item(500, 100, "Hi", true);
+
+        player.buyItem(item1);
+        player.buyItem(item2);
+        assertEquals("Inventory: \n" + "   - Dusk blade [50]\n   - Hi [100]\n" , player.displayItems());
+
+    }
+
+    @Test
+    void testDisplayNoItems() {
+        assertEquals("Inventory: ", player.displayItems());
+    }
+
 
 
 

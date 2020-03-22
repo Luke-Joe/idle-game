@@ -22,5 +22,13 @@ I have also put my own spin on the genre by correlating it to minions, which I h
 - As a user, I want to be able to save my items as well as the gold I have earned
 - As a user, I want to be able to load the game with all my progress stored from the last save
 
+##Instructions for Grader
+- Clicking the "Create New User" button creates a new save with the input username. Clicking the "Load Save"
+button loads an old save with the given username.
+- Once ingame, clicking save will save the users data
+- Click "Shop" and then "Buy" and then select a buyable item to add that item to the players inventory
+- Click "Shop" and then "Sell" and then select an item in your inventory to sell that item and remove it from the players inventory
+- Buying an item in the shop will play an audioclip 
+
 
 
