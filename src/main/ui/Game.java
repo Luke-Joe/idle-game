@@ -1,5 +1,6 @@
 package ui;
 
+import exceptions.CannotBuyException;
 import model.Item;
 import model.Player;
 import org.json.simple.parser.ParseException;
@@ -88,15 +89,17 @@ public class Game {
             selection = input.next();
 
             if (selection.equals("1")) {
-                if (player.buyItem(item1)) {
+                try {
+                    player.buyItem(item1);
                     System.out.println("You have bought " + item1.getName());
-                } else {
+                } catch (CannotBuyException e) {
                     System.out.println("You cannot purchase this item");
                 }
             } else if (selection.equals("3")) {
-                if (player.buyItem(item3)) {
+                try {
+                    player.buyItem(item3);
                     System.out.println("You have bought " + item3.getName());
-                } else {
+                } catch (CannotBuyException e) {
                     System.out.println("You cannot purchase this item");
                 }
             }

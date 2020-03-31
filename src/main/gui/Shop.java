@@ -1,5 +1,6 @@
 package gui;
 
+import exceptions.CannotBuyException;
 import model.Item;
 import model.Player;
 
@@ -65,10 +66,16 @@ public class Shop extends JFrame {
         item2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.buyItem(sword);
-                sound.play();
-                balance.setText(s + player.getBalance());
-                inventory.setText(player.displayItems());
+                try {
+                    player.buyItem(sword);
+                    sound.play();
+                    balance.setText(s + player.getBalance());
+                    inventory.setText(player.displayItems());
+                } catch (CannotBuyException ex) {
+                    balance.setText("The item cannot be bought!");
+
+                }
+
             }
         });
     }
@@ -77,10 +84,15 @@ public class Shop extends JFrame {
         item1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                player.buyItem(soe);
-                sound.play();
-                balance.setText("Balance: " + player.getBalance());
-                inventory.setText(player.displayItems());
+                try {
+                    player.buyItem(soe);
+                    sound.play();
+                    balance.setText("Balance: " + player.getBalance());
+                    inventory.setText(player.displayItems());
+                } catch (CannotBuyException ex) {
+                    balance.setText("The item cannot be bought!");
+                }
+
 
 
             }

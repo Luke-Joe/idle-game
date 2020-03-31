@@ -30,5 +30,11 @@ button loads an old save with the given username.
 - Click "Shop" and then "Sell" and then select an item in your inventory to sell that item and remove it from the players inventory
 - Buying an item in the shop will play an audioclip 
 
+##Phase 4: Task 2
+- I implemented the first option (Test and design a class that is robust).
+- This was implemented in the Player class, specifically in the buyItem method. 
+- The method was adjusted to throw a "cannotBuyException" if a situation was encountered
+  in which the item cannot be bought (inventory is full or balance is too low).
+
 
 

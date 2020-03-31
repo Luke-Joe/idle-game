@@ -30,9 +30,12 @@ public class Item {
         return stats;
     }
 
+    //EFFECTS: returns item name
     public String getName() {
         return name;
     }
+
+    //EFFECTS: Returns item type
 
     public boolean getType() {
         return type;
