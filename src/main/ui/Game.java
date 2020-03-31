@@ -62,12 +62,15 @@ public class Game {
         }
     }
 
+    //MODIFIES: player
+    //EFFECTS: Increases balance and creep score
     private void click() {
         System.out.println("your balance has increased by " + ((player.getCs() / 10) + 10) + "!");
         player.setBalance(player.getBalance() + ((player.getCs() / 10) + 10));
         player.setCs(player.getCs() + 1);
     }
 
+    //EFFECTS: returns player balance, ad, damage, and cs
     private void profile() {
         System.out.println("Your current balance is " + player.getBalance() + ".\n You are doing "
                 + player.getAd() + " damage with each strike.\n Your team is doing " + player.getDmg()
@@ -76,6 +79,8 @@ public class Game {
 
     }
 
+    //MODIFIES: player
+    //EFFECTS: Shop for player to buy items
     private void shop() {
         String selection = "";
 
@@ -107,6 +112,7 @@ public class Game {
     }
 
 
+    //EFFECTS: main menu for LucasFarmingSimulator
     private void mainMenu() {
         System.out.println("Welcome to LucasFarmingSimulator");
         System.out.println("type r to hit the minion");

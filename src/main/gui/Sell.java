@@ -10,8 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+// Shop when Sell button in Decision screen is clicked
+//Citation: https://www.youtube.com/watch?v=5o3fMLPY7qY
 
 public class Sell {
+
+    //EFFECTS: Sets up panel and frame for sell shop based on given player
     public Sell(Player player) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -35,6 +39,7 @@ public class Sell {
         generateButtonsForInv(player, balance, inv, panel);
     }
 
+    //EFFECTS: creates a button for every item in the players inventory that sells the item when pressed
     private void generateButtonsForInv(Player player, JLabel balance, JLabel inv, JPanel panel) {
         for (Item i : player.getInv()) {
             JButton temp = new JButton(i.getName());

@@ -10,8 +10,11 @@ import java.awt.event.ActionListener;
 
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
+// A stage in the shop in which the user chooses whether to buy or sell items
+// Citation: https://www.youtube.com/watch?v=5o3fMLPY7qY
 public class Decision {
 
+    //Setting up JFrame and JPanel for selection process
     public Decision(Player player) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -41,6 +44,7 @@ public class Decision {
 
     }
 
+    //EFFECTS: Sets functionality when "Sell" button is clicked
     private void clickSell(Player player, JButton sell) {
         sell.addActionListener(new ActionListener() {
             @Override
@@ -50,6 +54,7 @@ public class Decision {
         });
     }
 
+    //EFFECTS: Sets functionality when "Buy" button is clicked
     private void clickBuy(Player player, JButton buy) {
         buy.addActionListener(new ActionListener() {
             @Override

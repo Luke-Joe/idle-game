@@ -14,14 +14,13 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import static persistence.Reader.parseSave;
 import static persistence.Reader.readPlayer;
 import static persistence.Writer.savePlayer;
+//Menu in which player can choose to load or create a new save
+//Citation: https://www.youtube.com/watch?v=5o3fMLPY7qY
 
 public class MainMenu {
 
-    public static void main(String[] args) {
-        new MainMenu();
 
-    }
-
+    //EFFECTS: Sets up frame and panel for the Load/New menu
     public MainMenu() {
 
         JFrame frame = new JFrame();
@@ -49,6 +48,7 @@ public class MainMenu {
 
     }
 
+    //EFFECTS: Sets up functionality when "Load" button is clicked
     private void clickOldSave(JButton oldSave) {
         oldSave.addActionListener(new ActionListener() {
             @Override
@@ -74,6 +74,7 @@ public class MainMenu {
         });
     }
 
+    //Sets up functionality when "New User" button is clicked
     private void clickNewUser(JButton newUser) {
         newUser.addActionListener(new ActionListener() {
             @Override
@@ -97,6 +98,8 @@ public class MainMenu {
         });
     }
 
+
+    //Reads old save with given name
     private void readSave(String input) {
         try {
             new GUI(parseSave(readPlayer("./data/" + input + ".json")), input);

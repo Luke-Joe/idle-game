@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
+// Main menu for game
+// Citation: https://www.youtube.com/watch?v=5o3fMLPY7qY
 public class GUI implements ActionListener {
     private JButton button;
     private JButton shop;
@@ -22,7 +24,7 @@ public class GUI implements ActionListener {
     private JPanel leftPanel;
     Player player1;
 
-
+    // Sets up menu
     public GUI(Player player, String id) {
 
         player1 = player;
@@ -54,6 +56,7 @@ public class GUI implements ActionListener {
 
     }
 
+    //EFFECTS: Sets functionality when "Shop" button is clicked
     private void clickShop() {
         shop.addActionListener(new ActionListener() {
             @Override
@@ -63,7 +66,7 @@ public class GUI implements ActionListener {
         });
     }
 
-
+    //EFFECTS: Sets up left panel
     private void leftPanel() {
         leftPanel = new JPanel();
         leftPanel.setBorder(BorderFactory.createEmptyBorder(350, 100, 350, 500));
@@ -72,6 +75,7 @@ public class GUI implements ActionListener {
 
     }
 
+    //EFFECTS: Sets up middle panel
     private void midPanel() {
         midPanel = new JPanel();
         midPanel.setBorder(BorderFactory.createEmptyBorder(150, 350, 500, 700));
@@ -80,6 +84,7 @@ public class GUI implements ActionListener {
         midPanel.add(money);
     }
 
+    //EFFECTS: Sets up frame
     private void frameSetup() {
         JFrame frame = new JFrame();
         frame.add(leftPanel, BorderLayout.WEST);
@@ -91,6 +96,8 @@ public class GUI implements ActionListener {
         frame.setSize(1500, 1000);
     }
 
+    //MODIFIES: player
+    //EFFECTS: Sets up functionality when minion is clicked
 
     private void clickButton() {
         button.addActionListener(
@@ -107,10 +114,9 @@ public class GUI implements ActionListener {
         );
     }
 
-
+    //EFFECTS: Functionality when a button is pressed
     @Override
     public void actionPerformed(ActionEvent e) {
-
     }
 }
 

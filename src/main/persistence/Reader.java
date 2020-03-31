@@ -15,12 +15,14 @@ import java.io.IOException;
 // Reads save file
 public class Reader {
 
+    //EFFECTS: Reads file with given name
     public static JSONObject readPlayer(String filename) throws IOException, ParseException {
         FileReader reader = new FileReader(filename);
         JSONParser jsonParser = new JSONParser();
         return (JSONObject) jsonParser.parse(reader);
     }
 
+    //EFFECTS: Loads aspects stored inside of save and applies it to player
     public static Player parseSave(JSONObject save) {
         Player player = new Player();
 
