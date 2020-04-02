@@ -28,13 +28,13 @@ public class ReaderTest {
         player.setCs(3);
         player.setAd(43);
         player.getInv().add(item1);
-        savePlayer(player, "save");
+        savePlayer(player, "test123");
     }
 
     @Test
     void testParseSave() {
         try {
-            parseSave(readPlayer("./data/save.json"));
+            parseSave(readPlayer("./data/test123.json"));
             assertEquals(235, player.getDmg());
             assertEquals(12363, player.getBalance());
             assertEquals(3, player.getCs());

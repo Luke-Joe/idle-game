@@ -152,6 +152,7 @@ class PlayerTest {
         }
 
         assertTrue(player.sellItem(test2));
+        assertFalse(player.sellItem(test2));
 
 
 
