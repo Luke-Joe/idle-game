@@ -28,13 +28,18 @@ public class GUI {
     public GUI(Player player, String id) {
 
         player1 = player;
+
         button = new JButton("Minion");
         shop = new JButton("Shop");
         save = new JButton("Save");
+
         shop.setPreferredSize(new Dimension(100, 100));
+
         minions = new JLabel("Slain: " + player1.getCs());
         money = new JLabel("Balance: " + player1.getBalance());
+
         button.setPreferredSize(new Dimension(450, 600));
+
         clickButton();
         clickShop();
         leftPanel();

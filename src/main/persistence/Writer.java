@@ -35,7 +35,7 @@ public class Writer {
 
 
         save.put("inventory", inventory);
-        Files.write(Paths.get("./data/save.json"), save.toJSONString().getBytes());
+        Files.write(Paths.get("./data/" + input + ".json"), save.toJSONString().getBytes());
 
 
     }

@@ -51,4 +51,18 @@ public class WriterTest {
 
     }
 
+    @Test
+    void testNoFile() {
+        try {
+
+            parseSave(readPlayer("hello"));
+            fail("this should not run");
+        } catch (ParseException e) {
+            //success
+        } catch (IOException e) {
+            //success?
+        }
+
+    }
+
 }

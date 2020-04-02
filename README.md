@@ -48,4 +48,7 @@ button loads an old save with the given username.
   functionality as the onKill method in player. 
 - To fix this problematic coupling, I replaced it with the onKill method, which changes the fields in player accordingly following a minion kill.
 
+- Within many classes in gui, including Decision, MainMenu, and Sell, I noticed that one method was performing most of the work in setting up both the
+  JFrame as well as the JPanel. To increase method cohesiveness, I refactored the panel setup code into a separate method. 
+
 

@@ -117,8 +117,11 @@ class PlayerTest {
 
     @Test
     void buyItemTooPoor() {
+
+        Item test = new Item(10000, 10, "Item1", true);
+
         try {
-            player.buyItem(new Item(10000, 10, "Item1", true));
+            player.buyItem(test);
         } catch(CannotBuyException e) {
             //should be caught
         }
@@ -139,12 +142,19 @@ class PlayerTest {
 
     @Test
     void buyItemGood() {
-
+        Item test1 = new Item(100, 10, "Item2", false);
+        Item test2 = new Item(100, 10, "Item1", true);
         try {
-            player.buyItem(new Item(100, 10, "Item1", true));
+            player.buyItem(test2);
+            player.buyItem(test1);
         } catch (CannotBuyException e) {
             fail("Exception should not have been thrown");
         }
+
+        assertTrue(player.sellItem(test2));
+
+
+
     }
 
 
