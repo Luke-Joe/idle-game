@@ -66,8 +66,7 @@ public class Game {
     //EFFECTS: Increases balance and creep score
     private void click() {
         System.out.println("your balance has increased by " + ((player.getCs() / 10) + 10) + "!");
-        player.setBalance(player.getBalance() + ((player.getCs() / 10) + 10));
-        player.setCs(player.getCs() + 1);
+        player.onKill();
     }
 
     //EFFECTS: returns player balance, ad, damage, and cs

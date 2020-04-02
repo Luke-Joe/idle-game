@@ -23,30 +23,6 @@ public class Player {
         cs = 0;
     }
 
-    //MODIFIES: this
-    //EFFECTS: if the inventory is not full and there is enough money to purchase, adds item to inventory,
-    //         deducts cost of item from balance, applies stats to user, and returns true
-
-//    public Boolean buyItem(Item item) {
-//        if (balance < item.getCost()) {
-//            return false;
-//            // System.out.println("You are too poor to purchase this item");
-//        } else if (!item.getType()) {
-//            balance = balance - item.getCost();
-//            dmg = dmg + item.getStats();
-//            return true;
-//        } else if (inv.size() >= MAX_SIZE) {
-//            return false;
-//            //System.out.println("Your inventory is full!");
-//        }
-//        balance = balance - item.getCost();
-//        inv.add(item);
-//        ad = ad + item.getStats();
-//
-//
-//        return true;
-//        // System.out.println("You have purchased " item.getName() " Your remaining balance is" + balance"!");
-//    }
 
     //MODIFIES: this
     //EFFECTS: if the inventory is not full and there is enough money to purchase, adds item to inventory,
@@ -54,7 +30,7 @@ public class Player {
     public Boolean buyItem(Item item) throws CannotBuyException {
         if (balance < item.getCost()) {
             throw new CannotBuyException();
-        } else if (!item.getType()) {
+        } else if (!item.getType()) {   
             balance = balance - item.getCost();
             dmg = dmg + item.getStats();
             return true;
@@ -64,6 +40,8 @@ public class Player {
         balance = balance - item.getCost();
         inv.add(item);
         ad = ad + item.getStats();
+
+
 
 
         return true;
@@ -96,7 +74,7 @@ public class Player {
         listItem = "Inventory: \n";
 
         for (Item i : inv) {
-            listItem += "   - " + i.getName() + " [" + i.getStats() + "]\n";
+            listItem = listItem + "   - " + i.getName() + " [" + i.getStats() + "]\n";
         }
 
         return listItem;

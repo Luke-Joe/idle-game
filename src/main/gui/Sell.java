@@ -27,16 +27,21 @@ public class Sell {
         JLabel balance = new JLabel("Balance: " + player.getBalance());
         JLabel inv = new JLabel(player.displayItems());
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 2));
-        panel.setPreferredSize(new Dimension(1500, 750));
-        panel.add(balance);
-        panel.add(inv);
+        JPanel panel = setupJPanel(balance, inv);
 
 
         frame.add(panel);
 
         generateButtonsForInv(player, balance, inv, panel);
+    }
+
+    private JPanel setupJPanel(JLabel balance, JLabel inv) {
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 2));
+        panel.setPreferredSize(new Dimension(1500, 750));
+        panel.add(balance);
+        panel.add(inv);
+        return panel;
     }
 
     //EFFECTS: creates a button for every item in the players inventory that sells the item when pressed

@@ -37,4 +37,15 @@ button loads an old save with the given username.
   in which the item cannot be bought (inventory is full or balance is too low).
 
 
+##Phase 4: Task 3
+- I noticed that the Shop class was performing the functionality of playing a sound. This is 
+  an example of poor cohesion, as the Shop class should solely revolve around the buying of items.
+- To improve cohesion, I created a new Sound class that has the proper setup and methods (previously in the shop class)
+  to play a wav file given the file name. 
+
+- Looking at the Game class in ui, I noticed that there was a click method for what occurs when a minion is attacked.
+  Within this method, there is code that appears to be exactly the same as the onKill method in Player. The method also has the same
+  functionality as the onKill method in player. 
+- To fix this problematic coupling, I replaced it with the onKill method, which changes the fields in player accordingly following a minion kill.
+
 

@@ -14,7 +14,7 @@ import java.io.IOException;
 
 // Main menu for game
 // Citation: https://www.youtube.com/watch?v=5o3fMLPY7qY
-public class GUI implements ActionListener {
+public class GUI {
     private JButton button;
     private JButton shop;
     private JButton save;
@@ -114,9 +114,6 @@ public class GUI implements ActionListener {
         );
     }
 
-    //EFFECTS: Functionality when a button is pressed
-    @Override
-    public void actionPerformed(ActionEvent e) {
-    }
+
 }
 

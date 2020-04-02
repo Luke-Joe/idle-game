@@ -11,16 +11,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 //Shop when player clicks on Buy in Decision menu
 //Citation: https://www.youtube.com/watch?v=5o3fMLPY7qY
 
-public class Shop extends JFrame {
+public class Shop {
 
     private JLabel balance;
     private JLabel inventory;
 
-    File oofFile = new File("res/oof.wav");
-    AudioClip sound;
+//    File oofFile = new File("res/oof.wav");
+//    AudioClip sound;
 
     Item soe = new Item(300, 50, "The Sin of Envy", true);
     Item sword = new Item(9000, 9000, "Sword", true);
@@ -33,12 +35,6 @@ public class Shop extends JFrame {
         frame.pack();
         frame.setVisible(true);
         frame.setSize(1500, 750);
-        try {
-            sound = Applet.newAudioClip(oofFile.toURL());
-        } catch (Exception a) {
-            a.printStackTrace();
-        }
-
 
         JButton item1 = new JButton("Sin of Envy [Cost: 300/Stats: 50]");
         JButton item2 = new JButton("Sword [Cost: 9000/Stats: 9000]");
@@ -75,7 +71,7 @@ public class Shop extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     player.buyItem(sword);
-                    sound.play();
+                    Sound.playSound("oof");
                     balance.setText(s + player.getBalance());
                     inventory.setText(player.displayItems());
                 } catch (CannotBuyException ex) {
@@ -95,13 +91,12 @@ public class Shop extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     player.buyItem(soe);
-                    sound.play();
+                    Sound.playSound("oof");
                     balance.setText("Balance: " + player.getBalance());
                     inventory.setText(player.displayItems());
                 } catch (CannotBuyException ex) {
                     balance.setText("The item cannot be bought!");
                 }
-
 
 
             }

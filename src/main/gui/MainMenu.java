@@ -32,11 +32,7 @@ public class MainMenu {
         JButton newUser = new JButton("Create New User");
         JButton oldSave = new JButton("Load Save");
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout());
-        panel.add(intro);
-        panel.add(newUser);
-        panel.add(oldSave);
+        JPanel panel = setupJPanel(intro, newUser, oldSave);
 
         frame.add(panel);
         frame.pack();
@@ -46,6 +42,15 @@ public class MainMenu {
         clickOldSave(oldSave);
 
 
+    }
+
+    private JPanel setupJPanel(JLabel intro, JButton newUser, JButton oldSave) {
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+        panel.add(intro);
+        panel.add(newUser);
+        panel.add(oldSave);
+        return panel;
     }
 
     //EFFECTS: Sets up functionality when "Load" button is clicked

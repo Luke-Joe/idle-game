@@ -27,12 +27,7 @@ public class Decision {
 
         JLabel intro = new JLabel("Hello! What would you like to do?");
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 2));
-        panel.setPreferredSize(new Dimension(1500, 750));
-        panel.add(buy);
-        panel.add(sell);
-        panel.add(intro);
+        JPanel panel = setupJPanel(buy, sell, intro);
 
         frame.add(panel);
 
@@ -42,6 +37,16 @@ public class Decision {
         frame.pack();
         frame.setVisible(true);
 
+    }
+
+    private JPanel setupJPanel(JButton buy, JButton sell, JLabel intro) {
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 2));
+        panel.setPreferredSize(new Dimension(1500, 750));
+        panel.add(buy);
+        panel.add(sell);
+        panel.add(intro);
+        return panel;
     }
 
     //EFFECTS: Sets functionality when "Sell" button is clicked
